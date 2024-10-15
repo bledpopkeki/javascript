@@ -1,0 +1,9 @@
+body{
+    background-color: beige;
+}
+#txt{
+    font: 100;
+    font-size: large;
+    background-color: black;
+    color: blue;
+}
