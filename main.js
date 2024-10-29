@@ -1,21 +1,60 @@
-var input=document.getElementById('input');
-var button=document.getElementById('btn');
-var text=document.getElementById('text');
-var button1=document.getElementById('plus');
-var input=document.getElementById('n1');
-var input=document.getElementById('n2');
-var h2=document.getElementById('h2');
-var age=document.getElementById('age')
+var wakeuptime;
+var dstime;
+var sleeptime;
+var noon =12;
 
-button.onclick=function(){
-    text.innerHTML=input.value;
-}
-    button1.onclick=function(){
+function showCurrentTime(){
+    var clock = document.getElementById('clock');
+    var currentTime = new Date();
 
-        h2.innerHTML=parseInt(input.value)+ parseInt(input2.value);
+    var hours = currentTime.getHours('');
+    var minutes = currentTime.getMinutes('');
+    var seconds = currentTime.getSeconds('');
+
+    var meridian = "AM";
+
+    if(hours >= noon){
+        meridian = "PM"
     }
-if( age>= 18 ){
 
-
+    var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian;
+    clock.innerText = clockTime;
+    changeImage();
 }
 
+setInterval(showCurrentTime, 1000);
+
+function changeImage(){
+    var time = new Date().getHours();
+
+    var image = "img/ds_clock.png";
+    var imageHTML = document.getElementById('timeImage');
+    if(time == wakeuptime){
+        image = "img/morning.gif";
+    }
+    else if(time == dstime){
+        image = "img/class.gif"
+    }
+    else if(time == sleeptime){
+        image = "img/night.gif";
+    }
+    imageHTML.src = image;
+}
+
+function updateClock(){
+    var wakeUpTimeSelector = document.getElementsById('wakeUpTimeSelector');
+    
+    wakeuptime = dsTimeSelector.value;
+function updateClock(){
+    var wakeUpTimeSelector = document.getElementsById('classTimeSelector');
+    
+    dstime = dsTimeSelector.value;
+function updateClock(){
+    var sleepTimeSelector = document.getElementsById('sleepTimeSelector');
+    
+    sleeptime = sleepTimeSelector.value;
+}
+
+var saveBtn = document.getElementById('saveBtn');
+
+saveBtn.addEventListener('click', updateClock);
