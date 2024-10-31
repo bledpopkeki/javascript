@@ -1,60 +1,42 @@
-var wakeuptime;
-var dstime;
-var sleeptime;
-var noon =12;
+var input= document.getElementById("input_id");
+var button= document.getElementById("btn_id");
+var text= document.getElementById("texti_id");
 
-function showCurrentTime(){
-    var clock = document.getElementById('clock');
-    var currentTime = new Date();
-
-    var hours = currentTime.getHours('');
-    var minutes = currentTime.getMinutes('');
-    var seconds = currentTime.getSeconds('');
-
-    var meridian = "AM";
-
-    if(hours >= noon){
-        meridian = "PM"
-    }
-
-    var clockTime = hours + ":" + minutes + ":" + seconds + " " + meridian;
-    clock.innerText = clockTime;
-    changeImage();
+button.onclick=function(){
+    text.innerHTML=input.value;
 }
 
-setInterval(showCurrentTime, 1000);
+var input1=document.getElementById("input1");
+var input1=document.getElementById("input2");
+var answer=document.querySelector("#answer");
+var btn_shuma=document.querySelector("#btn_shuma");
 
-function changeImage(){
-    var time = new Date().getHours();
+btn_shuma.addEventListener('click', function(){
+    answer.innerHTML= input1.value+input2.value;
+})
+var text1="The Best School In The World Is Digital School!";
+var resultati=text1.search(/Digital School/);
+document.getElementById("result1").innerHTML=resultati;
 
-    var image = "img/ds_clock.png";
-    var imageHTML = document.getElementById('timeImage');
-    if(time == wakeuptime){
-        image = "img/morning.gif";
-    }
-    else if(time == dstime){
-        image = "img/class.gif"
-    }
-    else if(time == sleeptime){
-        image = "img/night.gif";
-    }
-    imageHTML.src = image;
-}
 
-function updateClock(){
-    var wakeUpTimeSelector = document.getElementsById('wakeUpTimeSelector');
-    
-    wakeuptime = dsTimeSelector.value;
-function updateClock(){
-    var wakeUpTimeSelector = document.getElementsById('classTimeSelector');
-    
-    dstime = dsTimeSelector.value;
-function updateClock(){
-    var sleepTimeSelector = document.getElementsById('sleepTimeSelector');
-    
-    sleeptime = sleepTimeSelector.value;
-}
 
-var saveBtn = document.getElementById('saveBtn');
 
-saveBtn.addEventListener('click', updateClock);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
