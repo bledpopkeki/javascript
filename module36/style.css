@@ -1,4 +1,10 @@
-.clicked{
-    color: black;
-    height: 50px;
+#hidden{
+    display: none;
+} 
+.animate{
+    background-color: red;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    font-size: 10px;
 }
